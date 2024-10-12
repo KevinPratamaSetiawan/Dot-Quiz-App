@@ -1,0 +1,273 @@
+:root{
+    --background-color: #fdfdfd;
+    --text-color: #23272d;
+    --light-gray:       gray;
+    --head-font-family: "Lato", "Helvetica Neue", Helvetica, sans-serif;
+    --base-font-family: JetBrains Mono, monospace;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+#root{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-container{
+    border: 3px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: clamp(300px, 400px, 600px);
+    padding: 20px;
+    gap: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        width: 100%;
+        text-align: left;
+        font-family: var(--head-font-family);
+    }
+
+    form{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        label{
+            width: 100%;
+            text-align: left;
+            font-family: var(--base-font-family);
+            font-size: large;
+        }
+
+        input{
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            text-align: left;
+            width: 100%;
+            height: 30px;
+            padding: 0 10px;
+            color: var(--text-color);
+            border-bottom: 3px solid var(--text-color);
+            font-family: var(--base-font-family);
+        }
+
+        button{
+            all: unset;
+            display: inline-block;
+            margin: 0;
+            background: none;
+            text-transform: none;
+            
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid var(--text-color);
+            font: var(--base-font-family);
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        button:hover{
+            color: var(--background-color);
+            background-color: var(--text-color);
+        }
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#quiz-container{
+    border: 3px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: clamp(500px, 700px, 900px);
+    padding: 30px 10px;
+    gap: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    #quiz-nav{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 10px 5px 10px;
+        border-bottom: 3px dashed var(--text-color);
+
+        font-family: var(--head-font-family);
+        font-size: larger;
+
+        p{
+            width: 20%;
+        }
+
+        p:nth-child(1){ text-align: left; }
+        p:nth-child(2){ text-align: center; }
+        p:nth-child(3){ text-align: right; }
+    }
+
+    #quiz-question-container{
+        width: 100%;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        font-family: var(--base-font-family);
+
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding: 0 10px;
+        gap: 5px;
+
+        #quiz-info{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p:nth-child(2){
+                text-transform: uppercase;
+            }
+        }
+
+        #quiz-question{
+            width: 100%;
+            text-align: left;
+            font-size: larger;
+        }
+
+        #quiz-option-container{
+            width: 100%;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            span{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: larger;
+                gap: 5px;
+
+                input{
+                    accent-color: var(--text-color);
+                }
+            }
+        }
+
+        button{
+            all: unset;
+            display: inline-block;
+            margin: 0;
+            background: none;
+            text-transform: none;
+            
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: 2px solid var(--text-color);
+            font: var(--base-font-family);
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        button:hover{
+            color: var(--background-color);
+            background-color: var(--text-color);
+        }
+    }
+}
+
+#result-container{
+    border: 3px solid var(--text-color);
+    border-radius: 5px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: clamp(500px, 700px, 900px);
+    padding: 30px 10px;
+    gap: 20px;
+    font-family: var(--base-font-family);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    h2{
+        font-family: var(--head-font-family);
+    }
+
+    h1{
+        font-family: var(--base-font-family);
+        font-weight: 400;
+    }
+
+    #result-data{
+        width: 100%;
+        gap: 5px;
+
+        div{
+            width: 100%;
+            display: flex;
+            align-items: end;
+            
+            span{
+                flex-grow: 1;
+                height: 1px;
+                margin: 0 3px 4px 3px;
+                border-bottom: 2px dotted var(--text-color);
+            }
+        }
+    }
+
+    button{
+        all: unset;
+        display: inline-block;
+        margin: 20px 0 0 0;
+        background: none;
+        text-transform: none;
+        
+        padding: 5px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        border: 2px solid var(--text-color);
+        font: var(--base-font-family);
+        color: var(--text-color);
+        text-align: center;
+    }
+
+    button:hover{
+        color: var(--background-color);
+        background-color: var(--text-color);
+    }
+}
