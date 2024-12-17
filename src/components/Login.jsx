@@ -28,8 +28,6 @@ const LoginForm = () => {
             localStorage.setItem('currentQuestionsIndex', '0');
             localStorage.setItem('timerLeft', '0');
             localStorage.setItem('currentAnsweredQuestions', '0');
-            console.log(localStorage.getItem('questions'))
-            console.log('Navigating to /quiz');
             navigate('/quiz');
         }
     };
